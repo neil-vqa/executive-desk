@@ -18,7 +18,7 @@ app.config.suppress_callback_exceptions = True
 app.title = 'The Executive Desk'
 
 server.config.update(
-	SECRET_KEY=os.urandom(12),
+	SECRET_KEY=os.environ.get('APP_SECRET_KEY'),
 	SQLALCHEMY_DATABASE_URI=config.get('database', 'con'),
 	SQLALCHEMY_TRACK_MODIFICATIONS=False
 )
